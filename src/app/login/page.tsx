@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Mail, Lock, LogIn, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Mail, Lock, LogIn, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function LoginPage() {
@@ -43,10 +43,10 @@ export default function LoginPage() {
               R
             </span>
             <h2 className="font-display font-extrabold text-2xl text-slate-800 tracking-tight">
-              Chào Mừng Trở Lại
+              Chào mừng trở lại
             </h2>
             <p className="text-xs text-slate-400 mt-2">
-              Đăng nhập tài khoản Tiệm Rau 55 của bạn
+              Đăng nhập vào tài khoản Tiệm Rau 55
             </p>
           </div>
 
@@ -116,7 +116,7 @@ export default function LoginPage() {
               ) : (
                 <>
                   <LogIn size={14} />
-                  <span>Đăng Nhập</span>
+                  <span>Đăng nhập</span>
                 </>
               )}
             </motion.button>

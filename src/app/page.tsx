@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ShoppingBag, ChevronRight, Leaf, ShieldCheck, Truck, Sparkles, ArrowUpRight, Flame, Heart } from 'lucide-react';
-import { products, CATEGORIES, Product } from '@/data/products';
+import { ShoppingBag, ChevronRight, Leaf, ShieldCheck, Truck, Sparkles, ArrowUpRight, Flame } from 'lucide-react';
+import { products, CATEGORIES } from '@/data/products';
 import { ProductCard } from '@/components/ProductCard';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -38,17 +38,17 @@ export default function HomePage() {
   const features = [
     {
       icon: <Leaf className="text-emerald-500" size={24} />,
-      title: '100% Canh Tác Hữu Cơ',
+      title: '100% canh tác hữu cơ',
       desc: 'Nông sản đạt chuẩn USDA, VietGAP, tuyệt đối không dùng chất bảo quản độc hại.'
     },
     {
       icon: <Truck className="text-emerald-500" size={24} />,
-      title: 'Giao Hỏa Tốc 2H',
+      title: 'Giao hỏa tốc trong 2 giờ',
       desc: 'Vận chuyển chuỗi lạnh giữ trọn vẹn vị tươi mát tự nhiên từ vườn đến gian bếp.'
     },
     {
       icon: <ShieldCheck className="text-emerald-500" size={24} />,
-      title: 'Tuyệt Đối An Toàn',
+      title: 'An tâm tuyệt đối',
       desc: 'Truy xuất nguồn gốc minh bạch rõ ràng trên từng bọc rau xanh, củ quả.'
     }
   ];
@@ -91,7 +91,7 @@ export default function HomePage() {
                   className="bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg shadow-emerald-500/10 flex items-center gap-2 transition-all duration-200"
                 >
                   <ShoppingBag size={18} />
-                  <span>Mua Sắm Ngay</span>
+                  <span>Mua ngay</span>
                 </Link>
                 <Link
                   href="#why-choose-us"
@@ -153,7 +153,7 @@ export default function HomePage() {
       <section id="why-choose-us" className="py-16 bg-white relative z-10 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mx-auto text-center mb-16">
-            <span className="text-emerald-500 text-xs font-bold uppercase tracking-widest">Giá Trị Cốt Lõi</span>
+            <span className="text-emerald-500 text-xs font-bold uppercase tracking-widest">Giá trị cốt lõi</span>
             <h2 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-800 tracking-tight mt-2">
               Tại sao hàng ngàn bà nội trợ tin chọn Tiệm Rau 55?
             </h2>
@@ -239,7 +239,7 @@ export default function HomePage() {
             href="/products"
             className="group bg-white hover:bg-emerald-50 border border-slate-200/80 hover:border-emerald-500/20 text-slate-700 hover:text-emerald-600 font-semibold px-8 py-3.5 rounded-2xl flex items-center gap-2 shadow-sm transition-all duration-300"
           >
-            <span>Xem Tất Cả Sản Phẩm</span>
+            <span>Xem tất cả sản phẩm</span>
             <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -256,12 +256,12 @@ export default function HomePage() {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/20 text-amber-400 border border-amber-500/20 rounded-full text-[10px] font-bold uppercase tracking-wider mb-6">
                 <Flame size={10} className="fill-amber-400" />
-                <span>Giới Hạn Hôm Nay</span>
+                <span>Chỉ hôm nay</span>
               </div>
 
               <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight leading-[1.2]">
-                Siêu Khuyến Mãi <br />
-                Đồng Giá 39K Tất Cả Gia Vị
+                Siêu khuyến mãi <br />
+                Đồng giá 39.000 ₫ cho gia vị
               </h2>
 
               <p className="text-slate-400 text-sm mt-4 max-w-md leading-relaxed">
@@ -298,7 +298,7 @@ export default function HomePage() {
                   href="/products?category=spices"
                   className="bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-semibold text-sm px-8 py-3.5 rounded-2xl shadow-lg transition-all duration-200 inline-block"
                 >
-                  Mua Ngay Ưu Đãi
+                  Mua ưu đãi ngay
                 </Link>
               </div>
             </div>
@@ -311,7 +311,7 @@ export default function HomePage() {
                 className="w-full h-full object-cover brightness-95"
               />
               <div className="absolute top-4 right-4 bg-amber-500 text-white font-display font-extrabold text-xs px-3.5 py-2 rounded-xl shadow-md uppercase tracking-wider">
-                Đồng Giá 39K
+                Đồng giá 39K
               </div>
             </div>
           </div>

@@ -2,11 +2,11 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Star, ShoppingCart, Leaf } from 'lucide-react';
 import { Product } from '@/data/products';
 import { useCart } from '@/context/CartContext';
 import { motion } from 'framer-motion';
+import { formatVND } from '@/lib/format';
 
 interface ProductCardProps {
   product: Product;
@@ -14,10 +14,6 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useCart();
-
-  const formatVND = (value: number) => {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
-  };
 
   const isLowStock = product.stockStatus === 'low_stock';
   const isOutOfStock = product.stockStatus === 'out_of_stock';
@@ -44,7 +40,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {isOutOfStock ? (
           <div className="absolute inset-0 bg-slate-900/60 z-10 flex items-center justify-center">
             <span className="bg-white/95 text-slate-800 font-display font-extrabold text-xs tracking-wider uppercase px-4 py-2 rounded-xl shadow-md">
-              Hết Hàng
+              Hết hàng
             </span>
           </div>
         ) : isLowStock ? (

@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { ShoppingBag, Search, Menu, X, User, ArrowRight } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { formatVND } from '@/lib/format';
 
 export const Navbar: React.FC = () => {
   const { cartCount } = useCart();
@@ -32,9 +33,12 @@ export const Navbar: React.FC = () => {
   // Trigger pop animation when cart count changes
   useEffect(() => {
     if (cartCount > 0) {
-      setAnimateCart(true);
-      const timer = setTimeout(() => setAnimateCart(false), 300);
-      return () => clearTimeout(timer);
+      const start = setTimeout(() => setAnimateCart(true), 0);
+      const end = setTimeout(() => setAnimateCart(false), 300);
+      return () => {
+        clearTimeout(start);
+        clearTimeout(end);
+      };
     }
   }, [cartCount]);
 
@@ -47,9 +51,9 @@ export const Navbar: React.FC = () => {
   };
 
   const navLinks = [
-    { href: '/', label: 'Trang Chủ' },
-    { href: '/products', label: 'Sản Phẩm' },
-    { href: '/cart', label: 'Giỏ Hàng' },
+    { href: '/', label: 'Trang chủ' },
+    { href: '/products', label: 'Sản phẩm' },
+    { href: '/cart', label: 'Giỏ hàng' },
   ];
 
   return (
@@ -227,14 +231,14 @@ export const Navbar: React.FC = () => {
               <div className="mt-auto p-4 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white relative overflow-hidden shadow-md">
                 <div className="relative z-10">
                   <span className="text-[10px] uppercase font-bold tracking-wider opacity-90">Ưu đãi hôm nay</span>
-                  <h4 className="font-display font-bold text-base mt-1">Freeship đơn từ 300k</h4>
-                  <p className="text-xs opacity-75 mt-1">Giao hàng tươi tốc hành trong 2h tại Đà Lạt & TP. HCM.</p>
+                  <h4 className="font-display font-bold text-base mt-1">Miễn phí vận chuyển từ {formatVND(300000)}</h4>
+                  <p className="text-xs opacity-75 mt-1">Giao hàng nhanh trong 2 giờ tại Đà Lạt & TP.HCM.</p>
                   <Link
                     href="/products"
                     onClick={() => setIsOpen(false)}
                     className="inline-flex items-center mt-3 text-xs bg-white text-emerald-600 font-semibold px-3 py-1.5 rounded-lg hover:shadow-lg transition-all duration-200"
                   >
-                    Mua Ngay
+                    Mua ngay
                   </Link>
                 </div>
                 <div className="absolute right-[-20px] bottom-[-20px] w-24 h-24 bg-white/10 rounded-full blur-xl" />

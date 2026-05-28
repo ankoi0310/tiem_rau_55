@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { products, CATEGORIES, Product } from '@/data/products';
+import { products, CATEGORIES } from '@/data/products';
 import { ProductCard } from '@/components/ProductCard';
 import { SlidersHorizontal, Search, RotateCcw, X, Info, LayoutGrid } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { formatVND } from '@/lib/format';
 
 function ProductsContent() {
   const searchParams = useSearchParams();
@@ -24,8 +25,13 @@ function ProductsContent() {
 
   // Sync state if searchParams change externally (e.g. from navbar redirects)
   useEffect(() => {
-    setSelectedCategory(searchParams.get('category') || 'all');
-    setSearchQuery(searchParams.get('search') || '');
+    const nextCategory = searchParams.get('category') || 'all';
+    const nextSearch = searchParams.get('search') || '';
+
+    queueMicrotask(() => {
+      setSelectedCategory(nextCategory);
+      setSearchQuery(nextSearch);
+    });
   }, [searchParams]);
 
   // Filtering Logic
@@ -75,10 +81,6 @@ function ProductsContent() {
     setSortBy('default');
   };
 
-  const formatVND = (value: number) => {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
-  };
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* 1. Header Banner */}
@@ -88,7 +90,7 @@ function ProductsContent() {
             <LayoutGrid size={12} /> Cửa hàng
           </span>
           <h1 className="font-display font-extrabold text-3xl text-slate-800 tracking-tight">
-            Khám phá Cửa Hàng
+            Khám phá cửa hàng
           </h1>
           <p className="text-xs text-slate-400 mt-1 max-w-lg">
             Nông sản thu hoạch sớm, gia vị thảo mộc thiên nhiên canh tác bền vững. Thưởng thức độ thanh ngọt tươi mọng tinh khiết.
@@ -128,8 +130,8 @@ function ProductsContent() {
             className="input-organic text-xs py-2 bg-white cursor-pointer grow lg:grow-0"
           >
             <option value="default">Mặc định (Mới nhất)</option>
-            <option value="price-asc">Giá: Thấp đến Cao</option>
-            <option value="price-desc">Giá: Cao đến Thấp</option>
+            <option value="price-asc">Giá: thấp → cao</option>
+            <option value="price-desc">Giá: cao → thấp</option>
             <option value="rating">Đánh giá tốt nhất</option>
           </select>
         </div>
@@ -228,13 +230,13 @@ function ProductsContent() {
               </div>
               <h3 className="font-display font-bold text-slate-800 text-base">Không tìm thấy sản phẩm</h3>
               <p className="text-xs text-slate-400 mt-2">
-                Không tìm thấy nông sản nào khớp với bộ lọc hiện tại của bạn. Vui lòng đặt lại hoặc thử các cụm từ khác nhé!
+                Không tìm thấy sản phẩm phù hợp với bộ lọc hiện tại. Hãy đặt lại hoặc thử từ khóa khác nhé.
               </p>
               <button
                 onClick={resetFilters}
                 className="mt-6 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs px-6 py-2.5 rounded-xl shadow-md transition-all"
               >
-                Đặt Lại Tất Cả Bộ Lọc
+                Đặt lại bộ lọc
               </button>
             </div>
           ) : (
@@ -367,7 +369,7 @@ export default function ProductsPage() {
   return (
     <Suspense fallback={
       <div className="max-w-7xl mx-auto px-4 py-20 text-center text-slate-400">
-        Đang tải dữ liệu cửa hàng...
+        Đang tải danh sách sản phẩm...
       </div>
     }>
       <ProductsContent />

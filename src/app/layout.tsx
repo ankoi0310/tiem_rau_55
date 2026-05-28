@@ -20,14 +20,14 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'Tiệm Rau 55 - Thực Phẩm Hữu Cơ & Thảo Mộc Tươi Sạch',
+  title: 'Tiệm Rau 55 - Thực phẩm hữu cơ & thảo mộc tươi sạch',
   description: 'Chuyên cung cấp rau củ quả hữu cơ VietGAP, trái cây cao cấp nhập khẩu và gia vị thảo mộc tự nhiên. Giao nhanh 2h tốc hành tại Đà Lạt & TP. HCM.',
   keywords: 'rau sach, thuc pham huu co, hoa qua sach, rau da lat, tiem rau 55, trai cay cao cap, gia vi thao moc',
   openGraph: {
     type: 'website',
     locale: 'vi_VN',
     url: 'https://tiemrau55.com',
-    title: 'Tiệm Rau 55 - Thực Phẩm Hữu Cơ & Thảo Mộc Tươi Sạch',
+    title: 'Tiệm Rau 55 - Thực phẩm hữu cơ & thảo mộc tươi sạch',
     description: 'Chuyên cung cấp rau củ quả hữu cơ VietGAP, trái cây cao cấp nhập khẩu và gia vị thảo mộc tự nhiên.',
     siteName: 'Tiệm Rau 55',
   },
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${inter.variable} ${outfit.variable} h-full antialiasedScroll`}>
+    <html lang="vi" className={`${inter.variable} ${outfit.variable} h-full antialiased`}>
       <body className="min-h-screen flex flex-col bg-[#fcfdfc] text-[#1c2621] font-sans">
         <CartProvider>
           <Navbar />

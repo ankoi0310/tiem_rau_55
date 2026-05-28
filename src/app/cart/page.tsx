@@ -5,15 +5,12 @@ import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { ShoppingBag, ArrowLeft, Trash2, Plus, Minus, ArrowRight, ShieldCheck, Heart, Sparkles, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { formatVND } from '@/lib/format';
 
 export default function CartPage() {
   const { cart, updateQuantity, removeFromCart, cartTotal, clearCart } = useCart();
   const [checkoutSuccess, setCheckoutSuccess] = useState(false);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
-
-  const formatVND = (value: number) => {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
-  };
 
   // Shipping Fee Logic: Free shipping over 300,000 VND, otherwise 30,000 VND
   const shippingFee = cartTotal >= 300000 || cartTotal === 0 ? 0 : 30000;
@@ -50,7 +47,7 @@ export default function CartPage() {
               Thành công
             </span>
             <h2 className="font-display font-extrabold text-2xl text-slate-800 tracking-tight mt-4">
-              Đặt Hàng Thành Công!
+              Đặt hàng thành công!
             </h2>
             <p className="text-xs text-slate-400 mt-3 leading-relaxed">
               Mã đơn hàng của bạn là <strong>#TR55-98746</strong>. Đội ngũ giao hàng lạnh tốc hành đang chuẩn bị đóng gói rau sạch và sẽ giao tới địa chỉ của bạn trong tối đa 2 giờ tới.
@@ -60,13 +57,13 @@ export default function CartPage() {
                 href="/products"
                 className="block bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-semibold text-xs py-3.5 rounded-2xl shadow-md transition-all duration-200"
               >
-                Tiếp Tục Mua Sắm
+                Tiếp tục mua sắm
               </Link>
               <Link
                 href="/"
                 className="block bg-slate-50 hover:bg-slate-100 text-slate-700 font-semibold text-xs py-3.5 rounded-2xl transition-all duration-200"
               >
-                Về Trang Chủ
+                Về trang chủ
               </Link>
             </div>
           </motion.div>
@@ -91,7 +88,7 @@ export default function CartPage() {
               className="mt-6 inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-xs px-8 py-3.5 rounded-2xl shadow-md transition-all duration-200"
             >
               <ArrowLeft size={14} />
-              <span>Quay Lại Mua Sắm</span>
+              <span>Quay lại mua sắm</span>
             </Link>
           </motion.div>
         ) : (
@@ -107,7 +104,7 @@ export default function CartPage() {
             <div className="lg:col-span-2 space-y-6">
               <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <h1 className="font-display font-extrabold text-2xl text-slate-800 tracking-tight flex items-center gap-3">
-                  <ShoppingBag size={22} className="text-emerald-500" /> Giỏ Hàng Của Bạn
+                  <ShoppingBag size={22} className="text-emerald-500" /> Giỏ hàng của bạn
                 </h1>
                 <Link
                   href="/products"
@@ -202,7 +199,7 @@ export default function CartPage() {
             <div className="space-y-6">
               <div className="bg-white rounded-3xl border border-slate-100 p-6 lg:p-8 shadow-sm">
                 <h3 className="font-display font-bold text-slate-800 text-base mb-6 pb-4 border-b border-slate-100">
-                  Tóm Tắt Đơn Hàng
+                  Tóm tắt đơn hàng
                 </h3>
 
                 {/* Subtotal columns */}
@@ -229,7 +226,7 @@ export default function CartPage() {
                         <Sparkles size={10} className="fill-emerald-500" />
                         Gợi ý mua thêm
                       </span>
-                      Mua thêm <strong>{formatVND(300000 - cartTotal)}</strong> để được <strong>FREESHIP HỎA TỐC</strong>.
+                      Mua thêm <strong>{formatVND(300000 - cartTotal)}</strong> để được <strong>miễn phí vận chuyển</strong>.
                     </div>
                   )}
 

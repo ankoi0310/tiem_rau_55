@@ -29,7 +29,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const storedCart = localStorage.getItem('tiem_rau_55_cart');
       if (storedCart) {
-        setCart(JSON.parse(storedCart));
+        const parsed = JSON.parse(storedCart);
+        queueMicrotask(() => setCart(parsed));
       }
     } catch (error) {
       console.error('Failed to load cart from localStorage:', error);

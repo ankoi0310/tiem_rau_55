@@ -44,10 +44,10 @@ export default function RegisterPage() {
               R
             </span>
             <h2 className="font-display font-extrabold text-2xl text-slate-800 tracking-tight">
-              Tạo Tài Khoản Mới
+              Tạo tài khoản mới
             </h2>
             <p className="text-xs text-slate-400 mt-2">
-              Trở thành thành viên để nhận voucher 15% ngay
+              Trở thành thành viên để nhận ưu đãi 15% ngay
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export default function RegisterPage() {
             {/* Name Field */}
             <div className="space-y-1.5">
               <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
-                Họ và Tên
+                Họ và tên
               </label>
               <div className="relative">
                 <input
@@ -138,7 +138,7 @@ export default function RegisterPage() {
               ) : (
                 <>
                   <UserPlus size={14} />
-                  <span>Đăng Ký Tài Khoản</span>
+                  <span>Đăng ký tài khoản</span>
                 </>
               )}
             </motion.button>

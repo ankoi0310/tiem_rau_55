@@ -28,18 +28,18 @@ export interface Product {
 
 export const CATEGORIES = [
   { id: 'all', name: 'Tất cả sản phẩm' },
-  { id: 'greens', name: 'Rau Sạch Hữu Cơ' },
-  { id: 'fruits', name: 'Trái Cây Cao Cấp' },
-  { id: 'spices', name: 'Gia Vị & Thảo Mộc' },
+  { id: 'greens', name: 'Rau hữu cơ' },
+  { id: 'fruits', name: 'Trái cây cao cấp' },
+  { id: 'spices', name: 'Gia vị & thảo mộc' },
 ] as const;
 
 export const products: Product[] = [
   {
     id: '1',
-    name: 'Cải Bó Xôi Hữu Cơ (Spinach)',
+    name: 'Cải bó xôi hữu cơ',
     slug: 'cai-bo-xoi-huu-co',
     category: 'greens',
-    categoryName: 'Rau Sạch Hữu Cơ',
+    categoryName: 'Rau hữu cơ',
     price: 35000,
     unit: 'Túi 300g',
     rating: 4.9,
@@ -67,7 +67,7 @@ export const products: Product[] = [
     name: 'Cà Chua Bi Ruby Đà Lạt',
     slug: 'ca-chua-bi-ruby',
     category: 'greens',
-    categoryName: 'Rau Sạch Hữu Cơ',
+    categoryName: 'Rau hữu cơ',
     price: 45000,
     unit: 'Hộp 500g',
     rating: 4.8,
@@ -80,7 +80,7 @@ export const products: Product[] = [
       'https://images.unsplash.com/photo-1590137876181-2a5a7e34030d?q=80&w=800&auto=format&fit=crop'
     ],
     shortDescription: 'Cà chua bi ngọt lịm giống Ruby, mọng nước, giòn rụm. Phù hợp cho món salad và ăn nhẹ hàng ngày.',
-    description: 'Cà chua bi giống Ruby sở hữu hình dáng thuôn dài đẹp mắt cùng sắc đỏ sẫm như ngọc hồng lựu. Nhờ phương pháp chăm sóc hữu cơ nhà kính công nghệ cao, từng quả cà chua có độ ngọt thanh vượt trội, vỏ mỏng dai nhẹ và cực kỳ giòn ngọt. Chứa hàm lượng chất chống oxy hóa Lycopene dồi dào, sản phẩm là người bạn vàng giúp trẻ hóa làn da, giảm cholesteron xấu trong máu.',
+    description: 'Cà chua bi giống Ruby sở hữu hình dáng thuôn dài đẹp mắt cùng sắc đỏ sẫm như ngọc hồng lựu. Nhờ phương pháp chăm sóc hữu cơ nhà kính công nghệ cao, từng quả cà chua có độ ngọt thanh vượt trội, vỏ mỏng dai nhẹ và cực kỳ giòn ngọt. Chứa hàm lượng chất chống oxy hóa Lycopene dồi dào, sản phẩm là người bạn vàng giúp trẻ hóa làn da, giảm cholesterol xấu trong máu.',
     nutritionalFacts: {
       calories: '18 kcal / 100g',
       fiber: '1.2g',
@@ -95,7 +95,7 @@ export const products: Product[] = [
     name: 'Bơ Sáp 034 Đắk Lắk (Loại I)',
     slug: 'bo-sap-034',
     category: 'fruits',
-    categoryName: 'Trái Cây Cao Cấp',
+    categoryName: 'Trái cây cao cấp',
     price: 75000,
     unit: '1 Kg (2-3 Quả)',
     rating: 4.7,
@@ -120,10 +120,10 @@ export const products: Product[] = [
   },
   {
     id: '4',
-    name: 'Hương Thảo Tươi (Rosemary)',
+    name: 'Hương thảo tươi',
     slug: 'huong-thao-tuoi',
     category: 'spices',
-    categoryName: 'Gia Vị & Thảo Mộc',
+    categoryName: 'Gia vị & thảo mộc',
     price: 28000,
     unit: 'Hộp 50g',
     rating: 4.9,
@@ -151,7 +151,7 @@ export const products: Product[] = [
     name: 'Cải Thìa Hữu Cơ Đà Lạt',
     slug: 'cai-thia-huu-co',
     category: 'greens',
-    categoryName: 'Rau Sạch Hữu Cơ',
+    categoryName: 'Rau hữu cơ',
     price: 24000,
     unit: 'Túi 500g',
     rating: 4.6,
@@ -176,12 +176,12 @@ export const products: Product[] = [
   },
   {
     id: '6',
-    name: 'Táo Envy Organic Mỹ (Size L)',
+    name: 'Táo Envy hữu cơ Mỹ (cỡ L)',
     slug: 'tao-envy-organic',
     category: 'fruits',
-    categoryName: 'Trái Cây Cao Cấp',
+    categoryName: 'Trái cây cao cấp',
     price: 139000,
-    unit: 'Túi 1 Kg (approx. 3 quả)',
+    unit: 'Túi 1 kg (khoảng 3 quả)',
     rating: 4.9,
     reviewsCount: 74,
     stockStatus: 'in_stock',
@@ -199,7 +199,7 @@ export const products: Product[] = [
       vitamins: ['Vitamin C (14%)', 'Kali (3%)', 'Pectin', 'Kháng chất']
     },
     origin: 'Washington, Mỹ',
-    certifications: ['USDA Organic', 'Import Quality'],
+    certifications: ['USDA Organic', 'Hàng nhập khẩu'],
     weight: '1kg'
   },
   {
@@ -207,7 +207,7 @@ export const products: Product[] = [
     name: 'Gừng Sẻ Hữu Cơ Tây Nguyên',
     slug: 'gung-se-huu-co',
     category: 'spices',
-    categoryName: 'Gia Vị & Thảo Mộc',
+    categoryName: 'Gia vị & thảo mộc',
     price: 32000,
     unit: 'Gói 300g',
     rating: 4.8,
@@ -235,7 +235,7 @@ export const products: Product[] = [
     name: 'Nho Mẫu Đơn Shine Muscat (Hàn Quốc)',
     slug: 'nho-mau-don-muscat',
     category: 'fruits',
-    categoryName: 'Trái Cây Cao Cấp',
+    categoryName: 'Trái cây cao cấp',
     price: 499000,
     unit: 'Chùm 600g',
     rating: 5.0,
@@ -248,14 +248,14 @@ export const products: Product[] = [
       'https://images.unsplash.com/photo-1423483641154-5411ec9c0ddf?q=80&w=800&auto=format&fit=crop'
     ],
     shortDescription: 'Nho mẫu đơn Muscat hữu cơ nhập khẩu Hàn Quốc. Trái to xanh mướt, không hạt, ngọt lịm vị sữa.',
-    description: 'Nho mẫu đơn Muscat (Shine Muscat) đạt tiêu chuẩn "Premium Choice" trồng theo phương thức mỗi cành chỉ giữ lại một chùm nho tốt nhất. Quả nho tròn lẳn căng mọng, vỏ mỏng không chát, cắn vào giòn tan lan tỏa vị ngọt lịm đậm đà cùng mùi hương hoa nhài quyện vị sữa độc đáo. Nho chứa chất chống lão hóa Resveratrol mạnh mẽ cùng lượng đường tự nhiên lành mạnh, nạp nhanh năng lượng cho cơ thể.',
+    description: 'Nho mẫu đơn Muscat (Shine Muscat) đạt tiêu chuẩn tuyển chọn cao, trồng theo phương thức mỗi cành chỉ giữ lại một chùm nho tốt nhất. Quả nho tròn lẳn căng mọng, vỏ mỏng không chát, cắn vào giòn tan lan tỏa vị ngọt lịm đậm đà cùng mùi hương hoa nhài quyện vị sữa độc đáo. Nho chứa chất chống lão hóa Resveratrol mạnh mẽ cùng lượng đường tự nhiên lành mạnh, nạp nhanh năng lượng cho cơ thể.',
     nutritionalFacts: {
       calories: '69 kcal / 100g',
       fiber: '0.9g',
       vitamins: ['Resveratrol', 'Vitamin C (9%)', 'Vitamin K (12%)', 'Sắt']
     },
     origin: 'Gyeongsangbuk-do, Hàn Quốc',
-    certifications: ['Premium GAP Hàn Quốc', 'Import Quality'],
+    certifications: ['GAP Hàn Quốc', 'Hàng nhập khẩu'],
     weight: '600g'
   },
   {
@@ -263,7 +263,7 @@ export const products: Product[] = [
     name: 'Quế Ống Sáo Trà Bồng Cổ Cự',
     slug: 'que-ong-sao-tra-bong',
     category: 'spices',
-    categoryName: 'Gia Vị & Thảo Mộc',
+    categoryName: 'Gia vị & thảo mộc',
     price: 55000,
     unit: 'Hộp 100g',
     rating: 4.8,
@@ -291,7 +291,7 @@ export const products: Product[] = [
     name: 'Nấm Hương Tươi Hữu Cơ',
     slug: 'nam-huong-tuoi-organic',
     category: 'greens',
-    categoryName: 'Rau Sạch Hữu Cơ',
+    categoryName: 'Rau hữu cơ',
     price: 38000,
     unit: 'Khay 200g',
     rating: 4.7,
@@ -311,7 +311,7 @@ export const products: Product[] = [
       vitamins: ['Protein thực vật', 'Vitamin D (18%)', 'Kẽm', 'Vitamin B2']
     },
     origin: 'Lạc Dương, Lâm Đồng',
-    certifications: ['VietGAP', 'Organic Hữu cơ'],
+    certifications: ['VietGAP', 'Hữu cơ'],
     weight: '200g'
   },
   {
@@ -319,7 +319,7 @@ export const products: Product[] = [
     name: 'Chanh Dây Mật Đà Lạt',
     slug: 'chanh-day-mat-da-lat',
     category: 'fruits',
-    categoryName: 'Trái Cây Cao Cấp',
+    categoryName: 'Trái cây cao cấp',
     price: 48000,
     unit: 'Túi 1 Kg',
     rating: 4.8,
@@ -347,7 +347,7 @@ export const products: Product[] = [
     name: 'Ớt Xiêm Rừng Xanh Tươi mộc mạc',
     slug: 'ot-xiem-rung-xanh',
     category: 'spices',
-    categoryName: 'Gia Vị & Thảo Mộc',
+    categoryName: 'Gia vị & thảo mộc',
     price: 39000,
     unit: 'Hộp 100g',
     rating: 4.9,
@@ -360,7 +360,7 @@ export const products: Product[] = [
       'https://images.unsplash.com/photo-1595855759920-86582396756a?q=80&w=800&auto=format&fit=crop'
     ],
     shortDescription: 'Ớt xiêm rừng xanh đặc sản hoang dã. Trái siêu nhỏ nhưng độ cay nồng cực mạnh cùng mùi thơm đặc biệt.',
-    description: 'Ớt xiêm rừng sinh trưởng hoàn toàn tự nhiên nơi bìa rừng núi cao Tây Nguyên. Trái ớt chỉ dài khoảng 1-2 cm, màu xanh thẫm đặc trưng, cắn một miếng sẽ dậy vị cay giòn rát lưỡi và tỏa mùi thơm thảo mộc quý phái không một loại ớt thường nào sánh kịp. Rất được săn đón để ngâm nước mắm tỏi ăn cùng mỳ tôm, cơm nóng hoặc pha nước chấm cá nướng.',
+    description: 'Ớt xiêm rừng sinh trưởng hoàn toàn tự nhiên nơi bìa rừng núi cao Tây Nguyên. Trái ớt chỉ dài khoảng 1-2 cm, màu xanh thẫm đặc trưng, cắn một miếng sẽ dậy vị cay giòn rát lưỡi và tỏa mùi thơm thảo mộc quý phái không một loại ớt thường nào sánh kịp. Rất được săn đón để ngâm nước mắm tỏi ăn cùng mì tôm, cơm nóng hoặc pha nước chấm cá nướng.',
     nutritionalFacts: {
       calories: '40 kcal / 100g',
       fiber: '1.5g',

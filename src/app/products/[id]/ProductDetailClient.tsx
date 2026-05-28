@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { Product } from '@/data/products';
 import { useCart } from '@/context/CartContext';
 import { ProductCard } from '@/components/ProductCard';
-import { Star, ShieldCheck, Heart, Leaf, ChevronLeft, ChevronRight, ShoppingCart, Plus, Minus, Truck } from 'lucide-react';
+import { Star, ShieldCheck, Leaf, ChevronLeft, ChevronRight, ShoppingCart, Plus, Minus, Truck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { formatVND } from '@/lib/format';
 
 interface ProductDetailClientProps {
   product: Product;
@@ -18,10 +19,6 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState<'desc' | 'nutrition' | 'shipping'>('desc');
-
-  const formatVND = (value: number) => {
-    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
-  };
 
   const handlePrevImage = () => {
     setActiveImageIndex((prev) => (prev === 0 ? product.images.length - 1 : prev - 1));
@@ -86,7 +83,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
             {isOutOfStock ? (
               <div className="absolute inset-0 bg-slate-900/60 z-10 flex items-center justify-center">
                 <span className="bg-white text-slate-800 font-display font-extrabold text-sm uppercase tracking-wider px-6 py-3 rounded-2xl shadow-lg">
-                  Hết Hàng
+                  Hết hàng
                 </span>
               </div>
             ) : isLowStock ? (
@@ -228,7 +225,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                   className="bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-semibold text-sm px-8 py-4 rounded-2xl shadow-lg shadow-emerald-500/10 flex items-center justify-center gap-2 grow w-full transition-all duration-200"
                 >
                   <ShoppingCart size={16} />
-                  <span>Thêm Vào Giỏ Hàng</span>
+                  <span>Thêm vào giỏ hàng</span>
                 </motion.button>
               </>
             ) : (
@@ -355,7 +352,7 @@ export default function ProductDetailClient({ product, relatedProducts }: Produc
                   </div>
                 </div>
                 <div className="space-y-2 mt-4 text-[11px] text-slate-500">
-                  <p>• <strong>Giao hàng 2H:</strong> Áp dụng cho các đơn hàng nội thành Đà Lạt & TP. HCM.</p>
+                  <p>• <strong>Giao hàng trong 2 giờ:</strong> Áp dụng cho các đơn hàng nội thành Đà Lạt & TP.HCM.</p>
                   <p>• <strong>Bảo quản tại nhà:</strong> Nên cho rau vào túi zip đục lỗ và trữ trong ngăn mát tủ lạnh (nhiệt độ 4 - 8°C). Rửa sạch trước khi ăn.</p>
                 </div>
               </motion.div>

@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
               <Sparkles size={12} /> Nhận bí quyết sống xanh
             </span>
             <h3 className="font-display font-extrabold text-2xl lg:text-3xl text-white tracking-tight">
-              Đăng ký nhận tin tức & voucher 15%
+              Đăng ký nhận tin tức & ưu đãi 15%
             </h3>
             <p className="text-sm text-slate-400 mt-2">
               Nhận thông tin sản phẩm thu hoạch mới, các ưu đãi đặc quyền và công thức chế biến detox sạch mát mỗi tuần.
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
                   type="submit"
                   className="bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-lg transition-all duration-200"
                 >
-                  Đăng Ký
+                  Đăng ký
                 </button>
               </>
             )}
@@ -139,7 +139,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="hover:text-emerald-400 transition-colors duration-200">
-                  Giao hàng hoả tốc 2H
+                  Giao hàng hỏa tốc trong 2 giờ
                 </a>
               </li>
               <li>
@@ -181,7 +181,7 @@ export const Footer: React.FC = () => {
 
         {/* Footer Bottom copyright */}
         <div className="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Tiệm Rau 55. Bản quyền được bảo lưu hoàn chỉnh.</p>
+          <p>© {new Date().getFullYear()} Tiệm Rau 55. Mọi quyền được bảo lưu.</p>
           <p className="flex items-center gap-1">
             Được kiến tạo bằng <Heart size={10} className="text-emerald-500 fill-emerald-500" /> & Nguồn nông sản Việt sạch
           </p>
