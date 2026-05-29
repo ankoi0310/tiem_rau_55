@@ -40,6 +40,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={`${inter.variable} ${montserrat.variable} h-full antialiased`}>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6897559423941068"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-[#fcfdfc] text-[#1c2621] font-sans">
         <CartProvider>
           <Navbar />
