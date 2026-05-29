@@ -84,7 +84,7 @@ function ProductsContent() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* 1. Header Banner */}
-      <div className="bg-gradient-to-tr from-emerald-50 to-teal-50/30 rounded-3xl p-8 lg:p-12 mb-10 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-100 shadow-sm relative overflow-hidden">
+      <div className="bg-linear-to-tr from-emerald-50 to-teal-50/30 rounded-3xl p-8 lg:p-12 mb-10 flex flex-col md:flex-row md:items-center justify-between gap-6 border border-slate-100 shadow-sm relative overflow-hidden">
         <div className="relative z-10">
           <span className="text-emerald-600 text-xs font-extrabold uppercase tracking-widest flex items-center gap-1 mb-1">
             <LayoutGrid size={12} /> Cửa hàng

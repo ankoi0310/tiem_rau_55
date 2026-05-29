@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Outfit } from 'next/font/google';
+import { Inter, Montserrat } from 'next/font/google';
 import { CartProvider } from '@/context/CartContext';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -12,10 +12,10 @@ const inter = Inter({
   display: 'swap',
 });
 
-const outfit = Outfit({
-  subsets: ['latin'],
-  variable: '--font-outfit',
-  weight: ['400', '600', '700', '800'],
+const montserrat = Montserrat({
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-montserrat',
+  weight: ['500', '600', '700', '800'],
   display: 'swap',
 });
 
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${inter.variable} ${outfit.variable} h-full antialiased`}>
+    <html lang="vi" className={`${inter.variable} ${montserrat.variable} h-full antialiased`}>
       <body className="min-h-screen flex flex-col bg-[#fcfdfc] text-[#1c2621] font-sans">
         <CartProvider>
           <Navbar />

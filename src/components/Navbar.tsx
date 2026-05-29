@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { ShoppingBag, Search, Menu, X, User, ArrowRight } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
-import { motion, AnimatePresence } from 'framer-motion';
-import { formatVND } from '@/lib/format';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { ShoppingBag, Search, Menu, X, User, ArrowRight } from "lucide-react";
+import { useCart } from "@/context/CartContext";
+import { motion, AnimatePresence } from "framer-motion";
+import { formatVND } from "@/lib/format";
 
 export const Navbar: React.FC = () => {
   const { cartCount } = useCart();
   const pathname = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [animateCart, setAnimateCart] = useState(false);
 
@@ -26,8 +26,8 @@ export const Navbar: React.FC = () => {
         setIsScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Trigger pop animation when cart count changes
@@ -46,14 +46,14 @@ export const Navbar: React.FC = () => {
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
-      setSearchQuery('');
+      setSearchQuery("");
     }
   };
 
   const navLinks = [
-    { href: '/', label: 'Trang chủ' },
-    { href: '/products', label: 'Sản phẩm' },
-    { href: '/cart', label: 'Giỏ hàng' },
+    { href: "/", label: "Trang chủ" },
+    { href: "/products", label: "Sản phẩm" },
+    { href: "/cart", label: "Giỏ hàng" },
   ];
 
   return (
@@ -61,14 +61,17 @@ export const Navbar: React.FC = () => {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'glass-nav shadow-sm py-3'
-            : 'bg-transparent border-b border-transparent py-5'
+            ? "glass-nav shadow-sm py-3"
+            : "bg-transparent border-b border-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2 shrink-0 group">
+            <Link
+              href="/"
+              className="flex items-center space-x-2 shrink-0 group"
+            >
               <span className="w-9 h-9 rounded-xl badge-fresh flex items-center justify-center font-display font-bold text-lg tracking-wider">
                 R
               </span>
@@ -87,14 +90,24 @@ export const Navbar: React.FC = () => {
                     href={link.href}
                     className="relative py-2 text-sm font-medium tracking-wide transition-colors duration-200"
                   >
-                    <span className={isActive ? 'text-emerald-600 font-semibold' : 'text-slate-600 hover:text-emerald-500'}>
+                    <span
+                      className={
+                        isActive
+                          ? "text-emerald-600 font-semibold"
+                          : "text-slate-600 hover:text-emerald-500"
+                      }
+                    >
                       {link.label}
                     </span>
                     {isActive && (
                       <motion.span
                         layoutId="navUnderline"
                         className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full bg-emerald-500"
-                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 380,
+                          damping: 30,
+                        }}
                       />
                     )}
                   </Link>
@@ -105,7 +118,10 @@ export const Navbar: React.FC = () => {
             {/* Right Controls: Search, Auth, Cart, Mobile Menu */}
             <div className="flex items-center space-x-4 grow md:grow-0 justify-end">
               {/* Desktop Search Bar */}
-              <form onSubmit={handleSearchSubmit} className="hidden lg:flex items-center relative max-w-xs grow">
+              <form
+                onSubmit={handleSearchSubmit}
+                className="hidden lg:flex items-center relative max-w-xs grow"
+              >
                 <input
                   type="text"
                   placeholder="Tìm rau sạch, trái cây..."
@@ -113,7 +129,10 @@ export const Navbar: React.FC = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="input-organic w-full pr-10 text-xs py-2 focus:w-64 transition-all duration-300"
                 />
-                <button type="submit" className="absolute right-3 text-slate-400 hover:text-emerald-500">
+                <button
+                  type="submit"
+                  className="absolute right-3 text-slate-400 hover:text-emerald-500"
+                >
                   <Search size={16} />
                 </button>
               </form>
@@ -175,14 +194,16 @@ export const Navbar: React.FC = () => {
 
             {/* Sidebar drawer content */}
             <motion.div
-              initial={{ x: '100%' }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
               className="fixed right-0 top-0 bottom-0 w-80 max-w-full z-50 bg-white shadow-2xl p-6 flex flex-col md:hidden"
             >
               <div className="flex items-center justify-between pb-6 border-b border-slate-100">
-                <span className="font-display font-extrabold text-lg text-slate-800">Menu</span>
+                <span className="font-display font-extrabold text-lg text-slate-800">
+                  Menu
+                </span>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 text-slate-500 hover:text-emerald-500 hover:bg-emerald-50/50 rounded-full"
@@ -200,7 +221,10 @@ export const Navbar: React.FC = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="input-organic w-full pr-10 text-sm py-2.5"
                 />
-                <button type="submit" className="absolute right-3 top-3 text-slate-400 hover:text-emerald-500">
+                <button
+                  type="submit"
+                  className="absolute right-3 top-3 text-slate-400 hover:text-emerald-500"
+                >
                   <Search size={16} />
                 </button>
               </form>
@@ -216,23 +240,34 @@ export const Navbar: React.FC = () => {
                       onClick={() => setIsOpen(false)}
                       className={`flex items-center justify-between p-3 rounded-xl transition-all duration-200 ${
                         isActive
-                          ? 'bg-emerald-50/80 text-emerald-600 font-semibold'
-                          : 'text-slate-600 hover:bg-slate-50 hover:text-emerald-500'
+                          ? "bg-emerald-50/80 text-emerald-600 font-semibold"
+                          : "text-slate-600 hover:bg-slate-50 hover:text-emerald-500"
                       }`}
                     >
                       <span className="text-sm font-medium">{link.label}</span>
-                      <ArrowRight size={14} className={isActive ? 'text-emerald-500' : 'text-slate-300'} />
+                      <ArrowRight
+                        size={14}
+                        className={
+                          isActive ? "text-emerald-500" : "text-slate-300"
+                        }
+                      />
                     </Link>
                   );
                 })}
               </nav>
 
               {/* Drawer Bottom Promotion */}
-              <div className="mt-auto p-4 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-600 text-white relative overflow-hidden shadow-md">
+              <div className="mt-auto p-4 rounded-2xl bg-linear-to-tr from-emerald-500 to-teal-600 text-white relative overflow-hidden shadow-md">
                 <div className="relative z-10">
-                  <span className="text-[10px] uppercase font-bold tracking-wider opacity-90">Ưu đãi hôm nay</span>
-                  <h4 className="font-display font-bold text-base mt-1">Miễn phí vận chuyển từ {formatVND(300000)}</h4>
-                  <p className="text-xs opacity-75 mt-1">Giao hàng nhanh trong 2 giờ tại Đà Lạt & TP.HCM.</p>
+                  <span className="text-[10px] uppercase font-bold tracking-wider opacity-90">
+                    Ưu đãi hôm nay
+                  </span>
+                  <h4 className="font-display font-bold text-base mt-1">
+                    Miễn phí vận chuyển từ {formatVND(300000)}
+                  </h4>
+                  <p className="text-xs opacity-75 mt-1">
+                    Giao hàng nhanh trong 2 giờ tại Đà Lạt & TP.HCM.
+                  </p>
                   <Link
                     href="/products"
                     onClick={() => setIsOpen(false)}

@@ -25,7 +25,7 @@
   --color-accent-600: #d97706;
 
   --font-sans: var(--font-inter), sans-serif;
-  --font-display: var(--font-outfit), sans-serif;
+  --font-display: var(--font-montserrat), sans-serif;
 }
 
 :root {

@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Newsletter Section */}
-        <div className="bg-gradient-to-r from-emerald-950/80 to-slate-900 border border-emerald-500/20 rounded-3xl p-8 lg:p-12 mb-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="bg-linear-to-r from-emerald-950/80 to-slate-900 border border-emerald-500/20 rounded-3xl p-8 lg:p-12 mb-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="max-w-md">
             <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 mb-2">
               <Sparkles size={12} /> Nhận bí quyết sống xanh

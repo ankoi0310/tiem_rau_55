@@ -124,7 +124,7 @@ export default function HomePage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="relative aspect-square lg:aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 lg:max-w-xl lg:ml-auto"
+              className="relative aspect-square lg:aspect-4/3 rounded-[2.5rem] overflow-hidden shadow-2xl bg-slate-100 lg:max-w-xl lg:ml-auto"
             >
               <img
                 src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop"
@@ -304,7 +304,7 @@ export default function HomePage() {
             </div>
 
             {/* Promo Right Column Visual */}
-            <div className="relative aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-slate-800 lg:max-w-md lg:ml-auto">
+            <div className="relative aspect-square lg:aspect-4/3 rounded-3xl overflow-hidden shadow-xl bg-slate-800 lg:max-w-md lg:ml-auto">
               <img
                 src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=600"
                 alt="High quality spices layout"
