@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { products } from '@/data/products';
+import { getProductById, getProducts } from '@/lib/data-service';
 import ProductDetailClient from './ProductDetailClient';
 
 interface PageProps {
@@ -7,21 +7,23 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
+  const products = await getProducts();
   return products.map((p) => ({
-    id: p.id,
+    id: String(p.id),
   }));
 }
 
 export default async function ProductDetailPage({ params }: PageProps) {
   const resolvedParams = await params;
-  const product = products.find((p) => p.id === resolvedParams.id);
+  const product = await getProductById(resolvedParams.id);
 
   if (!product) {
     notFound();
   }
 
-  // Filter 4 related products of the same category, excluding the active one
-  const relatedProducts = products
+  // Get related products (same category)
+  const allProducts = await getProducts();
+  const relatedProducts = allProducts
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 

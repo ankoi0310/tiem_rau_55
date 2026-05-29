@@ -33,7 +33,7 @@ export const CATEGORIES = [
   { id: 'spices', name: 'Gia vị & thảo mộc' },
 ] as const;
 
-export const products: Product[] = [
+export const mockProducts: Product[] = [
   {
     id: '1',
     name: 'Cải bó xôi hữu cơ',
