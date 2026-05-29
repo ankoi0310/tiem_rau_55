@@ -30,8 +30,8 @@ function mapProduct(row: any): Product {
 /**
  * Lấy danh sách sản phẩm từ bảng `products` trong Supabase
  */
-export async function getProducts(): Promise<Product[]> {
-  const supabase = await createClient()
+export async function getProducts(isStaticBuild = false): Promise<Product[]> {
+  const supabase = await createClient(isStaticBuild)
   
   const { data: products, error } = await supabase
     .from('products')
@@ -49,8 +49,8 @@ export async function getProducts(): Promise<Product[]> {
 /**
  * Lấy chi tiết một sản phẩm theo ID
  */
-export async function getProductById(id: string): Promise<Product | null> {
-  const supabase = await createClient()
+export async function getProductById(id: string, isStaticBuild = false): Promise<Product | null> {
+  const supabase = await createClient(isStaticBuild)
   
   const { data: product, error } = await supabase
     .from('products')
@@ -69,8 +69,8 @@ export async function getProductById(id: string): Promise<Product | null> {
 /**
  * Lấy thông tin user profile hiện tại
  */
-export async function getUserProfile() {
-  const supabase = await createClient()
+export async function getUserProfile(isStaticBuild = false) {
+  const supabase = await createClient(isStaticBuild)
   
   const { data: { user } } = await supabase.auth.getUser()
   

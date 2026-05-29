@@ -7,7 +7,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const products = await getProducts();
+  const products = await getProducts(true);
   return products.map((p) => ({
     id: p.id
   }));
@@ -15,14 +15,13 @@ export async function generateStaticParams() {
 
 export default async function ProductDetailPage({ params }: PageProps) {
   const resolvedParams = await params;
-  const product = await getProductById(resolvedParams.id);
+  const product = await getProductById(resolvedParams.id, true);
 
   if (!product) {
     notFound();
   }
 
-  // Get related products (same category)
-  const allProducts = await getProducts();
+  const allProducts = await getProducts(true);
   const relatedProducts = allProducts
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
